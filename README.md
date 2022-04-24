@@ -2,4 +2,4 @@
 
 ## It`s successes if learninig ReactJS
 
-> **samurai_first** is *Simple project*
+> **samurai_first** is *Social-network* !
