@@ -5,7 +5,7 @@ import Hee from './He'
 
 const App = () => {
 	return (
-	<div>
+	<div className="BigBlock">
 		<An />
 		<Hee />
 		{/*<Headerr />*/}
