@@ -1,11 +1,13 @@
 import React from 'react';
 import './Header.css'
+import logo from './logo.png'
 
 const Header = () => {
 	return (
 		<header className="header">
 			<a href="#">
-				<img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Zeronet_logo.png" alt=""/>
+				<img src={logo} alt=""/>
+				<p className="header__title">Social-network</p>
 			</a>
 		</header>
 	);

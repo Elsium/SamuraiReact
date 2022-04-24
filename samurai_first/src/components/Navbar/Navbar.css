@@ -19,3 +19,11 @@
     flex-direction: column;
     justify-content: space-between;
 }
+.nav p a:hover,
+.nav__main p a:hover {
+    color: #ba00d0;
+}
+.nav p a:active,
+.nav__main p a:active {
+    color: #9100a3;
+}
