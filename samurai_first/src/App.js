@@ -1,39 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
-import An from './AnyComps'
-import Hee from './He'
+import Header from './components/Header/Header'
+import Navbar from './components/Navbar/Navbar'
+import Aside from './components/Aside/Aside'
 
 const App = () => {
 	return (
-	<div className="BigBlock">
-		<An />
-		<Hee />
-		{/*<Headerr />*/}
-		{/*<AnyComps />*/}
+	<div className="wrapper">
+		<Header/>
+		<Navbar/>
+		<Aside/>
 	</div>
 );
 }
-
-// const Headerr = () => {
-// 	return (
-// 		<div>
-// 			<a href="#">home </a>
-// 			<a href="#">news </a>
-// 			<a href="#">mes</a>
-// 		</div>
-// 	);
-// }
-
-// const AnyComps = () => {
-// 	return (
-// 		<div>
-// 			<div>new div</div>
-// 			<ul>
-// 				<li>asd</li>
-// 				<li>saf</li>
-// 			</ul>
-// 		</div>
-// 	);
-// }
-
 export default App;
