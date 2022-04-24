@@ -1,13 +1,13 @@
 import React from 'react';
-import './Header.css'
+import style from './Header.module.css'
 import logo from './logo.png'
 
 const Header = () => {
 	return (
-		<header className="header">
+		<header className={style.header}>
 			<a href="#">
-				<img src={logo} alt=""/>
-				<p className="header__title">Social-network</p>
+				<img className="item" src={logo} alt=""/>
+				<p className={style.header__title}>Social-network</p>
 			</a>
 		</header>
 	);
