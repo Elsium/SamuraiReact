@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Avadesc.module.css'
+import style from './Avadesc.module.scss'
 
 const Avadesc = (props) => {
 	return (

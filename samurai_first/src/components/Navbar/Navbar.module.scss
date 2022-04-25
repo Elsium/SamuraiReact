@@ -24,32 +24,32 @@
     align-items: center;
     transition: color 0.2s;
     color: #fff;
-}
-.ref span {
-    margin-left: 15px;
-}
-.ref:hover {
-    color: #d64be7;
-    transition: color 0.2s;
-}
-.ref:active {
-    color: #c245d2;
-    transition: color 0.2s;
-}
-.ref.newMsg {
-    animation: newMsg 2s ease infinite;
-}
-.ref.newMsg .item p {
-    display: block;
+    &:hover {
+        color: #d64be7;
+        transition: color 0.2s;
+    }
+    &:active {
+        color: #c245d2;
+        transition: color 0.2s;
+    }
+    &.newMsg {
+        animation: newMsg 2s ease infinite;
+    }
+    &.newMsg .item p {
+        display: block;
+    }
+    span {
+        margin-left: 15px;
+    }
 }
 .item {
     position: relative;
-}
-.item p {
-    display: none;
-    position: absolute;
-    font-size: 9px;
-    top: 5px;
+    p {
+        display: none;
+        position: absolute;
+        font-size: 9px;
+        top: 5px;
+    }
 }
 .sizef {
     left: 10px;

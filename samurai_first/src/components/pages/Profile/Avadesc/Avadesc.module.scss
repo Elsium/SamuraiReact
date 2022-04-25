@@ -4,11 +4,11 @@
 	justify-content: space-between;
 	width: 40%;
 	font-family: 'IBM Plex Sans', sans-serif;
-}
-.avadesc img {
-	border-radius: 50px;
-	width: 150px;
-	height: 150px;
+	img {
+		border-radius: 50px;
+		width: 150px;
+		height: 150px;
+	}
 }
 .username {
 	font-size: 48px;
@@ -41,7 +41,7 @@
 	align-items: center;
 	border-radius: 15px;
 	background: #535353;
-}
-.more:hover {
-	background: #4b4b4b;
+	&:hover {
+		background: #4b4b4b;
+	}
 }

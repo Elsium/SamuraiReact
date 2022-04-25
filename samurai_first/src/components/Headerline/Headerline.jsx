@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './Headerline.module.css'
+import style from './Headerline.module.scss'
 
 const Headerline = (props) => {
 	return (

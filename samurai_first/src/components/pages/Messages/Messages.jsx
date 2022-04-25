@@ -1,7 +1,7 @@
 import React from 'react';
-import style from './Dialogs.module.css';
+import style from './Messages.module.scss';
 
-const Dialogs = (props) => {
+const Messages = (props) => {
 	return (
 		<div className={style.content}>
 			Dialogs
@@ -9,4 +9,4 @@ const Dialogs = (props) => {
 	);
 }
 
-export default Dialogs;
+export default Messages;
