@@ -1,9 +1,9 @@
 .wrapper {
-    margin: auto;
+    margin: 0 auto;
     width: 1200px;
     display: grid;
     grid-template-rows: 60px 500px;
-    grid-template-columns: 1fr 9fr;
+    grid-template-columns: 2fr 9fr;
     grid-gap: 10px;
     grid-template-areas:
             "header header"

@@ -19,7 +19,6 @@ a:focus,
 a:active,
 a:visited{
   text-decoration: none;
-  color: black;
 }
 aside,
 nav,
@@ -37,7 +36,7 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background: #383838;
+  background: #717171;
 }
 input,
 button,

@@ -1,21 +1,23 @@
 .header {
     grid-area: header;
-    background: #f8d6ff;
-    border: #f3b6ff 1px solid ;
-    border-radius: 0 0 10px 10px;
+    background: #535353;
+    /*border-radius: 0 0 10px 10px;*/
     padding: 0 20px;
     display: flex;
     align-items: center;
+    z-index: 20;
 }
 .header a {
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 .header a img {
     width: 40px;
     height: 40px;
 }
 .header__title {
+    color: white;
     font-size: 30px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;

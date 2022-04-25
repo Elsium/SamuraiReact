@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Header.module.css'
 import logo from './logo.png'
 
-const Header = () => {
+const Header = (props) => {
 	return (
 		<header className={style.header}>
 			<a href="#">

@@ -1,23 +1,17 @@
 import React from 'react';
 import style from './Profile.module.css'
+import Myposts from './Myposts/Myposts'
+import Newpost from './Newpost/Newpost'
+import Avadesc from './Avadesc/Avadesc'
+import Banner from './Banner/Banner'
 
-const Profile = () => {
+const Profile = (props) => {
 	return (
 		<main className={style.content}>
-			<div className={style.content__banner}>
-				<img src="https://shapka-youtube.ru/wp-content/uploads/2020/10/exotanks.jpg" alt=""/>
-			</div>
-			<div className={style.content__avadesc}>
-				ava + description
-			</div>
-			<div className={style.content__newpost}>
-				new post
-			</div>
-			<div className={style.content__posts}>
-				<div className={style.posts__post}>
-					post
-				</div>
-			</div>
+			<Banner/>
+			<Avadesc/>
+			<Newpost/>
+			<Myposts/>
 		</main>
 	);
 }

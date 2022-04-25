@@ -3,12 +3,14 @@ import './App.css';
 import Header from './components/Header/Header'
 import Navbar from './components/Navbar/Navbar'
 import Profile from './components/Profile/Profile'
+import Headerline from './components/Headerline/Headerline'
 
-const App = () => {
+const App = (props) => {
 	return (
 	<div className="wrapper">
+		<Headerline/>
 		<Header/>
-		<Navbar/>
+		<Navbar msg='0'/>
 		<Profile/>
 	</div>
 );
