@@ -10,3 +10,8 @@
             "nav content";
 
 }
+.wrapper_content {
+    grid-area: content;
+    padding: 0 20px;
+    border-radius: 10px 10px 0 0;
+}
