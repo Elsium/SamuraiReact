@@ -5,19 +5,65 @@ import DialogItem from './DialogItem/DialogItem';
 import MSGItem from './MSGItem/MSGItem';
 
 const Messages = (props) => {
+	
+	let dialogsData = [
+		{id: 1, name: 'Denis'},
+		{id: 2, name: 'Stepa'},
+		{id: 3, name: 'Dima'}
+	];
+	let msgData = [
+		{
+			id: 1,
+			avatar: "https://cdnimg.rg.ru/i/gallery/84f24d10/19_b6265e7a.jpg",
+			msg: "Hi hi!",
+			sender: "1"
+		},
+		{
+			id: 2,
+			avatar: "https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg",
+			msg: "Hey",
+			sender: ""
+		},
+		{
+			id: 3,
+			avatar: "https://cdnimg.rg.ru/i/gallery/84f24d10/19_b6265e7a.jpg",
+			msg: "What`s up?",
+			sender: "1"
+		},
+		{
+			id: 4,
+			avatar: "https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg",
+			msg: "Fine ^^",
+			sender: ""
+		},
+		{
+			id: 5,
+			avatar: "https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg",
+			msg: "And u?",
+			sender: ""
+		},
+		{
+			id: 6,
+			avatar: "https://cdnimg.rg.ru/i/gallery/84f24d10/19_b6265e7a.jpg",
+			msg: "Its hard",
+			sender: "1"
+		},
+		{
+			id: 6,
+			avatar: "https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg",
+			msg: "oh",
+			sender: ""
+		}
+	]
+	
 	return (
 		<div className={style.content}>
 			<div className={style.dialogs}>
-				<DialogItem name="Denis" id="1"/>
-				<DialogItem name="Stepa" id="2"/>
-				<DialogItem name="Dima" id="3"/>
+				{ dialogsData.map(item => <DialogItem name={item.name} id={item.id}/>) }
 			</div>
 			<div className={style.dialogPlace}>
 				<div className={style.dialog}>
-					<MSGItem avatar="https://cdnimg.rg.ru/i/gallery/84f24d10/19_b6265e7a.jpg" msg="Hi hi hi hihasod; ifoweh ;vs;f hrodh vposhz ;ogh ;oashf ohasf hsldfhshdg; sh guhsdgh sudgh;uohgs ;ouhg ;usdhg; uoshd;gough;osgh" sender="1"/>
-					<MSGItem avatar="https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg" msg="Hey"/>
-					<MSGItem avatar="https://cdnimg.rg.ru/i/gallery/84f24d10/19_b6265e7a.jpg" msg="What`s up?" sender="1"/>
-					<MSGItem avatar="https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg" msg="Fine ^^"/>
+					{ msgData.map(item => <MSGItem avatar={item.avatar} msg={item.msg} sender={item.sender}/>) }
 				</div>
 				<div className={style.send}>
 					<form action="#">
