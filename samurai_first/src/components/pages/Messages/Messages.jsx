@@ -20,9 +20,9 @@ const Messages = (props) => {
 					<MSGItem avatar="https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg" msg="Fine ^^"/>
 				</div>
 				<div className={style.send}>
-					<form action="$">
+					<form action="#">
 						<input type="text" name="" id="" placeholder="type msg..."/>
-						<button>Send</button>
+						<button type="submit">Send</button>
 					</form>
 				</div>
 			</div>
