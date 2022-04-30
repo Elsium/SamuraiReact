@@ -21,10 +21,12 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 .dialog {
   padding: 10px;
   overflow: auto;
 }
+
 .send {
   width: 100%;
   height: 100px;
@@ -35,11 +37,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   form {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+
     input {
       padding: 5px;
       border: none;
@@ -48,24 +52,28 @@
       border-radius: 5px 0 0 5px;
       height: 40px;
       width: 70%;
+
       &:hover,
       &:active,
       &:focus {
         outline: none;
       }
     }
+
     button {
       background: black;
       height: 40px;
       width: 20%;
       color: white;
       border-radius: 0 5px 5px 0;
+
       &:hover {
         background: #2a2a2a;
       }
+
       &:active {
-         background: black;
-       }
+        background: black;
+      }
     }
   }
 }

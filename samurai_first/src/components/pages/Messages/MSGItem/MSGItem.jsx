@@ -5,7 +5,7 @@ import style from './MSGItem.module.scss';
 
 const MSGItem = (props) => {
 	let msgStyle = style.item;
-	if (props.sender > 0)  msgStyle += " " + style.msgFrom;
+	if (props.sender > 0) msgStyle += " " + style.msgFrom;
 	else msgStyle += " " + style.msgTo;
 	
 	return (

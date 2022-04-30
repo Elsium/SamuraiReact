@@ -1,49 +1,57 @@
 .avadesc {
-	margin-top: 20px;
-	display: flex;
-	justify-content: space-between;
-	width: 40%;
-	height: 150px;
-	font-family: 'IBM Plex Sans', sans-serif;
-	img {
-		border-radius: 50%;
-		width: 150px;
-		height: 150px;
-	}
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  height: 150px;
+  font-family: 'IBM Plex Sans', sans-serif;
+
+  img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+  }
 }
+
 .username {
-	font-size: 48px;
-	font-weight: 600;
-	font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
 }
+
 .description {
-	margin-top: 20px;
+  margin-top: 20px;
 }
+
 .item {
-	display: flex;
-	justify-content: space-between;
-	width: 160%;
-	margin-top: 3px;
+  display: flex;
+  justify-content: space-between;
+  width: 160%;
+  margin-top: 3px;
 }
+
 .content {
-	font-weight: 300;
-	font-style: italic;
+  font-weight: 300;
+  font-style: italic;
 }
+
 .title {
-	font-weight: 600;
+  font-weight: 600;
 }
+
 .more {
-	cursor: pointer;
-	align-self: center;
-	margin-top: 15px;
-	width: 200%;
-	height: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 15px;
-	background: #535353;
-	&:hover {
-		background: #4b4b4b;
-	}
+  cursor: pointer;
+  align-self: center;
+  margin-top: 15px;
+  width: 200%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background: #535353;
+
+  &:hover {
+    background: #4b4b4b;
+  }
 }

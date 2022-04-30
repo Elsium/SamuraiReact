@@ -11,7 +11,7 @@ const Profile = (props) => {
 			<Banner/>
 			<ProfileInto/>
 			<Newpost/>
-			<Myposts/>
+			<Myposts postsData={props.postsData}/>
 		</main>
 	);
 }

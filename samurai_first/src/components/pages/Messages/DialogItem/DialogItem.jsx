@@ -6,17 +6,17 @@ const DialogItem = (props) => {
 	let id = "/messages/" + props.id;
 	
 	return (
-	<div className={style.item}>
-		<Link to={id}>
-			<div>
-				<p className={style.title}>{props.name}</p>
-				<p className={style.last}>Last msg</p>
-			</div>
-			<div>
-				<span className={style.new}>·</span>
-			</div>
-		</Link>
-	</div>
+		<div className={style.item}>
+			<Link to={id}>
+				<div>
+					<p className={style.title}>{props.name}</p>
+					<p className={style.last}>Last msg</p>
+				</div>
+				<div>
+					<span className={style.new}>·</span>
+				</div>
+			</Link>
+		</div>
 	);
 }
 
