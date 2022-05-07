@@ -1,17 +1,20 @@
 import React from 'react';
 import style from './Newpost.module.scss'
+import {addPostActionCreator, updatePostTextActionCreator} from "../../../../Redux/store";
+
+
 
 const Newpost = (props) => {
-	
+	debugger;
 	let newPostElem = React.createRef();
 	
 	const send = () => {
-		props.dispatch({type: 'ADD-POST'});
+		props.dispatch(addPostActionCreator());
 	}
 	
 	const onPostChange = () => {
 		let text = newPostElem.current.value;
-		props.dispatch({type: 'UPDATE-POST-TEXT', newText: text});
+		props.dispatch(updatePostTextActionCreator(text));
 	}
 	
 	return (

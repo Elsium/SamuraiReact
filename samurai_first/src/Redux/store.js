@@ -1,3 +1,5 @@
+const addpost = 'ADD-POST';
+const updateposttext = 'UPDATE-POST-TEXT';
 let store = {
 	_state: {
 		profilePage: {
@@ -139,25 +141,46 @@ let store = {
 		this._rerender = observer;
 	},
 	
+	_addPost() {
+		debugger;
+		let count = this._state.profilePage.postsData.length + 1;
+		let newPost = {
+			id: count,
+			username: "Elsium",
+			avatar: "https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg",
+			text: this._state.profilePage.newText,
+			like: "0"
+		}
+		this._state.profilePage.postsData.push(newPost);
+		this._state.profilePage.newText = "";
+		this._rerender();
+	},
+	_updateText(text) {
+		debugger;
+		this._state.profilePage.newText = text;
+		this._rerender();
+	},
+	
 	dispatch(action) {
+		debugger;
 		if(action.type === 'ADD-POST') {
-			let count = this._state.profilePage.postsData.length + 1;
-			let newPost = {
-				id: count,
-				username: "Elsium",
-				avatar: "https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg",
-				text: this._state.profilePage.newText,
-				like: "0"
-			}
-			this._state.profilePage.postsData.push(newPost);
-			this._state.profilePage.newText = "";
-			this._rerender();
+			this._addPost();
 		}
 		else if (action.type === 'UPDATE-POST-TEXT') {
-			this._state.profilePage.newText = action.newText;
-			this._rerender();
+			this._updateText(action.newText);
 		}
 	},
+}
+export const addPostActionCreator = () => {
+	return {
+		type: addpost,
+	}
+}
+export const updatePostTextActionCreator = (text) => {
+	return {
+		type: updateposttext,
+		newText: text,
+	}
 }
 export default store;
 window.store = store;
