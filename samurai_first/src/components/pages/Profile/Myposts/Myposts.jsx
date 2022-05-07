@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './Myposts.module.scss'
 import Post from './Post/Post'
 

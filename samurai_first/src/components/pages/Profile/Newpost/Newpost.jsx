@@ -6,18 +6,20 @@ const Newpost = (props) => {
 	let newPostElem = React.createRef();
 	
 	const send = () => {
-		debugger;
+		props.dispatch({type: 'ADD-POST'});
+	}
+	
+	const onPostChange = () => {
 		let text = newPostElem.current.value;
-		props.addPost(text);
+		props.dispatch({type: 'UPDATE-POST-TEXT', newText: text});
 	}
 	
 	return (
-		<div className={style.newPost}>
-			<form action="#" className={style.inputNews}>
-				<textarea ref={newPostElem} name="" id="" placeholder="Whats new?"></textarea>
-				<button onClick={send}>Send</button>
-			</form>
-		</div>
+		<form action="#" className={style.inputNews}>
+			<textarea ref={newPostElem} name="" id="" placeholder="Whats new?" value={props.newText}
+					  onChange={onPostChange}/>
+			<button onClick={send}>Send</button>
+		</form>
 	);
 }
 export default Newpost;

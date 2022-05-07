@@ -9,11 +9,11 @@ const Messages = (props) => {
 	return (
 		<div className={style.content}>
 			<div className={style.dialogs}>
-				{props.dialogsData.map(item => <DialogItem name={item.name} id={item.id}/>)}
+				{props.data.dialogsData.map(item => <DialogItem name={item.name} id={item.id}/>)}
 			</div>
 			<div className={style.dialogPlace}>
 				<div className={style.dialog}>
-					{props.msgData.map(item => <MSGItem avatar={item.avatar} msg={item.msg} sender={item.sender}/>)}
+					{props.data.msgData.map(item => <MSGItem avatar={item.avatar} msg={item.msg} sender={item.sender}/>)}
 				</div>
 				<div className={style.send}>
 					<form action="#">

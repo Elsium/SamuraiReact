@@ -10,8 +10,8 @@ const Profile = (props) => {
 		<main className={style.content}>
 			<Banner/>
 			<ProfileInto/>
-			<Newpost addPost={props.addPost}/>
-			<Myposts postsData={props.postsData}/>
+			<Newpost dispatch={props.dispatch} newText={props.profilePage.newText}/>
+			<Myposts postsData={props.profilePage.postsData}/>
 		</main>
 	);
 }
