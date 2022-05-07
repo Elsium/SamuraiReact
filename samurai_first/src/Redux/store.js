@@ -1,5 +1,7 @@
 const addpost = 'ADD-POST';
 const updateposttext = 'UPDATE-POST-TEXT';
+const sendMSG = 'SEND-MSG';
+const updateMSGtext = 'UPDATE-MSG-TEXT';
 let store = {
 	_state: {
 		profilePage: {
@@ -48,6 +50,7 @@ let store = {
 				{id: 2, name: "Stepa"},
 				{id: 3, name: "Dima"}
 			],
+			curmsg: "",
 			msgData: [
 				{
 					id: 1,
@@ -142,7 +145,6 @@ let store = {
 	},
 	
 	_addPost() {
-		debugger;
 		let count = this._state.profilePage.postsData.length + 1;
 		let newPost = {
 			id: count,
@@ -155,32 +157,49 @@ let store = {
 		this._state.profilePage.newText = "";
 		this._rerender();
 	},
-	_updateText(text) {
-		debugger;
+	_updatePostText(text) {
 		this._state.profilePage.newText = text;
+		this._rerender();
+	},
+	_sendMSG() {
+		let count = this._state.profilePage.postsData.length + 1;
+		let newMSG = {
+			id: count,
+			avatar: "https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg",
+			msg: this._state.dialogsPage.curmsg,
+			sender: ""
+		}
+		this._state.dialogsPage.msgData.push(newMSG);
+		this._state.dialogsPage.curmsg = "";
+		this._rerender();
+	},
+	_updateMSGText(text) {
+		this._state.dialogsPage.curmsg = text;
 		this._rerender();
 	},
 	
 	dispatch(action) {
-		debugger;
 		if(action.type === 'ADD-POST') {
 			this._addPost();
 		}
-		else if (action.type === 'UPDATE-POST-TEXT') {
-			this._updateText(action.newText);
+		else if(action.type === 'UPDATE-POST-TEXT') {
+			this._updatePostText(action.newText);
+		}
+		else if(action.type === 'SEND-MSG') {
+			this._sendMSG();
+		}
+		else if(action.type === 'UPDATE-MSG-TEXT') {
+			this._updateMSGText(action.newText);
 		}
 	},
 }
-export const addPostActionCreator = () => {
-	return {
-		type: addpost,
-	}
-}
-export const updatePostTextActionCreator = (text) => {
-	return {
-		type: updateposttext,
-		newText: text,
-	}
-}
+
+export const addPostActionCreator = () => ({type: addpost});
+export const updatePostTextActionCreator = (text) =>
+	({type: updateposttext, newText: text});
+export const sendMSGActionCreator = () => ({type: sendMSG});
+export const updateMSGTextActionCreator = (text) =>
+	({type: updateMSGtext, newText: text});
+
 export default store;
 window.store = store;

@@ -6,7 +6,7 @@ const Myposts = (props) => {
 	
 	return (
 		<div className={style.posts}>
-			{props.postsData.map(item => <Post username={item.username} avatar={item.avatar} text={item.text}
+			{props.postsData.map(item => <Post key={item.id} username={item.username} avatar={item.avatar} text={item.text}
 										 like={item.like}/>)}
 		</div>
 	);

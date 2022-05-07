@@ -5,10 +5,10 @@ import {addPostActionCreator, updatePostTextActionCreator} from "../../../../Red
 
 
 const Newpost = (props) => {
-	debugger;
 	let newPostElem = React.createRef();
 	
-	const send = () => {
+	const send = async (event) =>{
+		event.preventDefault();
 		props.dispatch(addPostActionCreator());
 	}
 	
@@ -18,8 +18,8 @@ const Newpost = (props) => {
 	}
 	
 	return (
-		<form action="#" className={style.inputNews}>
-			<textarea ref={newPostElem} name="" id="" placeholder="Whats new?" value={props.newText}
+		<form className={style.inputNews}>
+			<textarea ref={newPostElem} placeholder="Whats new?" value={props.newText}
 					  onChange={onPostChange}/>
 			<button onClick={send}>Send</button>
 		</form>
