@@ -26,4 +26,9 @@ const dialogsReduver = (state, action) => {
 	
 	return state;
 }
+
+export const sendMSGActionCreator = () => ({type: sendMSG});
+export const updateMSGTextActionCreator = (text) =>
+	({type: updateMSGtext, newText: text});
+
 export default dialogsReduver;

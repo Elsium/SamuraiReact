@@ -1,10 +1,6 @@
 import profileReduver from "./profileReducer";
 import dialogsReduver from "./dialogsReducer";
 
-const addpost = 'ADD-POST';
-const updateposttext = 'UPDATE-POST-TEXT';
-const sendMSG = 'SEND-MSG';
-const updateMSGtext = 'UPDATE-MSG-TEXT';
 let store = {
 	_state: {
 		profilePage: {
@@ -153,13 +149,6 @@ let store = {
 		this._rerender();
 	},
 }
-
-export const addPostActionCreator = () => ({type: addpost});
-export const updatePostTextActionCreator = (text) =>
-	({type: updateposttext, newText: text});
-export const sendMSGActionCreator = () => ({type: sendMSG});
-export const updateMSGTextActionCreator = (text) =>
-	({type: updateMSGtext, newText: text});
 
 export default store;
 window.store = store;

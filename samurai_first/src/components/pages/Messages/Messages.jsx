@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Messages.module.scss';
 import DialogItem from './DialogItem/DialogItem';
 import MSGItem from './MSGItem/MSGItem';
-import {sendMSGActionCreator, updateMSGTextActionCreator} from "../../../Redux/store";
+import {sendMSGActionCreator, updateMSGTextActionCreator} from "../../../Redux/dialogsReducer";
 
 const Messages = (props) => {
 	let newMSGElem = React.createRef();

@@ -27,4 +27,9 @@ const profileReduver = (state, action) => {
 	
 	return state;
 }
+
+export const addPostActionCreator = () => ({type: addpost});
+export const updatePostTextActionCreator = (text) =>
+	({type: updateposttext, newText: text});
+
 export default profileReduver;
