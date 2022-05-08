@@ -11,6 +11,7 @@ import News from './components/pages/News/News';
 import Settings from './components/pages/Settings/Settings';
 
 const App = (props) => {
+	debugger
 	return (
 		<Router>
 			<div className="wrapper">

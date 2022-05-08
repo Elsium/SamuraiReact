@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
-import store from './Redux/store'
+import store from './Redux/redux-store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let rerender = () => {

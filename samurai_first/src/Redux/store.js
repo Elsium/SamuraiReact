@@ -132,7 +132,7 @@ let store = {
 			]
 		}
 	},
-	_rerender() {
+	_observ() {
 		console.log("no observer!");
 	},
 	
@@ -140,13 +140,13 @@ let store = {
 		return this._state;
 	},
 	subscribe (observer) {
-		this._rerender = observer;
+		this._observ = observer;
 	},
 	
 	dispatch(action) {
 		this._state.profilePage = profileReduver(this._state.profilePage, action);
 		this._state.dialogsPage = dialogsReduver(this._state.dialogsPage, action);
-		this._rerender();
+		this._observ();
 	},
 }
 
