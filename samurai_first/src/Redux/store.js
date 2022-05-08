@@ -1,3 +1,6 @@
+import profileReduver from "./profileReducer";
+import dialogsReduver from "./dialogsReducer";
+
 const addpost = 'ADD-POST';
 const updateposttext = 'UPDATE-POST-TEXT';
 const sendMSG = 'SEND-MSG';
@@ -144,53 +147,10 @@ let store = {
 		this._rerender = observer;
 	},
 	
-	_addPost() {
-		let count = this._state.profilePage.postsData.length + 1;
-		let newPost = {
-			id: count,
-			username: "Elsium",
-			avatar: "https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg",
-			text: this._state.profilePage.newText,
-			like: "0"
-		}
-		this._state.profilePage.postsData.push(newPost);
-		this._state.profilePage.newText = "";
-		this._rerender();
-	},
-	_updatePostText(text) {
-		this._state.profilePage.newText = text;
-		this._rerender();
-	},
-	_sendMSG() {
-		let count = this._state.profilePage.postsData.length + 1;
-		let newMSG = {
-			id: count,
-			avatar: "https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg",
-			msg: this._state.dialogsPage.curmsg,
-			sender: ""
-		}
-		this._state.dialogsPage.msgData.push(newMSG);
-		this._state.dialogsPage.curmsg = "";
-		this._rerender();
-	},
-	_updateMSGText(text) {
-		this._state.dialogsPage.curmsg = text;
-		this._rerender();
-	},
-	
 	dispatch(action) {
-		if(action.type === 'ADD-POST') {
-			this._addPost();
-		}
-		else if(action.type === 'UPDATE-POST-TEXT') {
-			this._updatePostText(action.newText);
-		}
-		else if(action.type === 'SEND-MSG') {
-			this._sendMSG();
-		}
-		else if(action.type === 'UPDATE-MSG-TEXT') {
-			this._updateMSGText(action.newText);
-		}
+		this._state.profilePage = profileReduver(this._state.profilePage, action);
+		this._state.dialogsPage = dialogsReduver(this._state.dialogsPage, action);
+		this._rerender();
 	},
 }
 
