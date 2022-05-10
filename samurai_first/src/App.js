@@ -5,13 +5,12 @@ import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/pages/Profile/Profile';
 import Headerline from './components/Headerline/Headerline';
-import Messages from './components/pages/Messages/Messages';
 import Music from './components/pages/Music/Music';
 import News from './components/pages/News/News';
 import Settings from './components/pages/Settings/Settings';
+import MessagesContainer from "./components/pages/Messages/MessagesContainer";
 
 const App = (props) => {
-	debugger
 	return (
 		<Router>
 			<div className="wrapper">
@@ -22,7 +21,7 @@ const App = (props) => {
 					<Routes>
 						<Route path={`/profile`} element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
 						<Route path={`/news`} element={<News/>}/>
-						<Route path={`/messages/*`} element={<Messages data={props.state.dialogsPage} dispatch={props.dispatch}/>}/>
+						<Route path={`/messages/*`} element={<MessagesContainer data={props.state.dialogsPage} dispatch={props.dispatch}/>}/>
 						<Route path={`/music`} element={<Music/>}/>
 						<Route path={`/settings`} element={<Settings/>}/>
 					</Routes>

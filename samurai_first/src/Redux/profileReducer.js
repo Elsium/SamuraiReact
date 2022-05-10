@@ -45,6 +45,7 @@ let initialState = {
 const profileReduver = (state = initialState, action) => {
 	switch (action.type) {
 		case addpost: {
+			if (state.newText === "") break;
 			let count = state.postsData.length + 1;
 			let newPost = {
 				id: count,

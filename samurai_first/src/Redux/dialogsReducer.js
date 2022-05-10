@@ -93,6 +93,7 @@ let initialState = {
 const dialogsReduver = (state = initialState, action) => {
 	switch (action.type) {
 		case sendMSG: {
+			if (state.curmsg === "") break;
 			let count = state.length + 1;
 			let newMSG = {
 				id: count,

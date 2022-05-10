@@ -19,6 +19,8 @@
 
     p {
       width: 70%;
+      word-break: break-all;
+      white-space: pre-wrap;
     }
 
     &.msgFrom {
