@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "react-redux": "^8.0.1",
     "redux": "^4.2.0"
   }
 }

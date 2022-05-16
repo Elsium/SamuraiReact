@@ -45,7 +45,7 @@ let initialState = {
 const profileReduver = (state = initialState, action) => {
 	switch (action.type) {
 		case addpost: {
-			if (state.newText === "") break;
+			if (state.newText === "") return state;
 			let count = state.postsData.length + 1;
 			let newPost = {
 				id: count,
@@ -54,20 +54,21 @@ const profileReduver = (state = initialState, action) => {
 				text: state.newText,
 				like: "0"
 			}
-			state.postsData.push(newPost);
-			state.newText = "";
-			break;
+			let copy = {...state};
+			copy.postsData = [...state.postsData];
+			copy.postsData.push(newPost);
+			copy.newText = "";
+			return copy;
 		}
 		case updateposttext: {
-			state.newText = action.newText;
-			break;
+			let copy = {...state};
+			copy.newText = action.newText;
+			return copy;
 		}
 		default: {
-			break;
+			return state;
 		}
 	}
-	
-	return state;
 }
 
 export const addPostActionCreator = () => ({type: addpost});

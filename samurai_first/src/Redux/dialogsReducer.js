@@ -93,28 +93,29 @@ let initialState = {
 const dialogsReduver = (state = initialState, action) => {
 	switch (action.type) {
 		case sendMSG: {
-			if (state.curmsg === "") break;
-			let count = state.length + 1;
+			if (state.curmsg === "") return state;
+			let count = state.msgData.length + 1;
 			let newMSG = {
 				id: count,
 				avatar: "https://s5.cdn.teleprogramma.pro/wp-content/uploads/2020/01/a76ebd11ecf1ab90a360b056f49b90a0.jpg",
 				msg: state.curmsg,
 				sender: ""
 			}
-			state.msgData.push(newMSG);
-			state.curmsg = "";
-			break;
+			let copy = {...state};
+			copy.msgData = [...state.msgData];
+			copy.msgData.push(newMSG);
+			copy.curmsg = "";
+			return copy;
 		}
 		case updateMSGtext: {
-			state.curmsg = action.newText;
-			break;
+			let copy = {...state};
+			copy.curmsg = action.newText;
+			return copy;
 		}
 		default: {
-			break;
+			return state;
 		}
 	}
-	
-	return state;
 }
 
 export const sendMSGActionCreator = () => ({type: sendMSG});

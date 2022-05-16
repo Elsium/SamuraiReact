@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import store from './Redux/redux-store'
+import {BrowserRouter as Router} from 'react-router-dom'
+import {Provider} from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let rerender = () => {
-	root.render(
-		<React.StrictMode>
-			<App state={store.getState()} dispatch={store.dispatch.bind(store)}/>
-		</React.StrictMode>
-	);
-}
-store.subscribe(rerender);
-rerender();
+root.render(
+	<React.StrictMode>
+		<Router>
+			<Provider store={store}>
+				<App/>
+			</Provider>
+		</Router>
+	</React.StrictMode>
+);
